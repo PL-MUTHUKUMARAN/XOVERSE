@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      #turnBanner {
+        position: absolute;
+        top: 60px;
+        font-size: 50px;
+        z-index: 10;
+      }
+
+      @media (max-width: 700px) {
+        #turnBanner {
+          top: 50px;
+          font-size: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="sfxGameOver" preload="auto" src="game over.mp3"></audio>
+    <audio id="sfxDraw" preload="auto" src="sfxdraw.mp3"></audio>
+    <audio id="sfxText" preload="auto" src="textsfx.mp3"></audio>
+
+    <p id="turnBanner"><span id="turnSpan"></span> - TURN</p>
+
+    <div id="resultCard">
+      <p id="resultText"></p>
+      <div>
+        <button id="btnReplay" onclick="location.reload()">PLAY AGAIN</button>
+        <button id="btnMenu" onclick="window.location.href='index.html'">
+          MENU
+        </button>
+      </div>
+    </div>
+
+    <svg viewBox="0 0 320 320" preserveAspectRatio="xMidYMid meet">
+      <g id="rect">
+        <rect id="r1" x="13" y="13" width="95px" height="95px" />
+        <rect id="r2" x="113" y="13" width="95px" height="95px" />
+        <rect id="r3" x="213" y="13" width="95px" height="95px" />
+        <rect id="r4" x="13" y="113" width="95px" height="95px" />
+        <rect id="r5" x="113" y="113" width="95px" height="95px" />
+        <rect id="r6" x="213" y="113" width="95px" height="95px" />
+        <rect id="r7" x="13" y="213" width="95px" height="95px" />
+        <rect id="r8" x="113" y="213" width="95px" height="95px" />
+        <rect id="r9" x="213" y="213" width="95px" height="95px" />
+      </g>
+
+      <g id="text" fill="white">
+        <text id="t1" x="60" y="85"></text>
+        <text id="t2" x="160" y="85"></text>
+        <text id="t3" x="260" y="85"></text>
+        <text id="t4" x="60" y="185"></text>
+        <text id="t5" x="160" y="185"></text>
+        <text id="t6" x="260" y="185"></text>
+        <text id="t7" x="60" y="285"></text>
+        <text id="t8" x="160" y="285"></text>
+        <text id="t9" x="260" y="285"></text>
+      </g>
+    </svg>
+
+    <script src="player-vs-player.js"></script>
+  </body>
+</html>
