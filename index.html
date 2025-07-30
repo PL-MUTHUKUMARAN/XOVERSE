@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>XOVERSE</title>
+    <title>XOVERSE | Main Menu</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body id="pageBody">
     <audio id="sfxGM" preload="auto" src="sfxgm.mp3" autoplay loop></audio>
-
+    <h1 id="w2xo">WELCOME TO XOVERSE!</h1>
     <div id="menuContainer">
       <h1>MENU</h1>
       <button id="btn1" onclick="window.location.href='player-vs-player.html'">
@@ -22,6 +22,15 @@
       </button>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+      const pageBody = document.getElementById("pageBody");
+      pageBody.addEventListener("click", () => {
+        const sfx = document.getElementById("sfxGM");
+        setTimeout(() => {
+          sfx.play();
+        }, 50);
+      });
+    </script>
   </body>
 </html>
+
