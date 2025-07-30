@@ -72,10 +72,10 @@ button:hover {
 @media (max-width: 600px) {
   #menuContainer {
     width: 90%;
-    height: 260px;
+    height: 280px;
     gap: 10px;
     font-size: 18px;
-    margin-top: 80px;
+    margin-top: 50px;
   }
 
   button {
