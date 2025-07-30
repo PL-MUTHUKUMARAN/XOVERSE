@@ -4,7 +4,7 @@ pageBody.addEventListener("click", () => {
   const sfx = document.getElementById("sfxGM");
   setTimeout(() => {
     sfx.play();
-  }, 20);
+  }, 50);
 });
 
 menuContainer.addEventListener("mouseenter", () => {
