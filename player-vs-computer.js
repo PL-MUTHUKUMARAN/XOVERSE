@@ -155,6 +155,14 @@ function player2Turn() {
     checkWinner();
     return;
   }
+  if (texts[center].textContent === "X")
+    for (const i of corners) {
+      if (texts[i].textContent === "") {
+        texts[i].textContent = "O";
+        checkWinner();
+        return;
+      }
+    }
   for (const i of [2, 4, 6, 8]) {
     if (texts[i].textContent === "") {
       texts[i].textContent = "O";
@@ -162,13 +170,7 @@ function player2Turn() {
       return;
     }
   }
-  for (const i of corners) {
-    if (texts[i].textContent === "") {
-      texts[i].textContent = "O";
-      checkWinner();
-      return;
-    }
-  }
+
   for (let i = 1; i <= 9; i++) {
     if (texts[i].textContent === "") {
       texts[i].textContent = "O";
@@ -179,7 +181,7 @@ function player2Turn() {
 }
 
 function randomOStart() {
-  const box = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const box = [1, 3, 5, 7, 9];
   const pos = box[Math.floor(Math.random() * box.length)];
   texts[pos].textContent = "O";
   checkWinner();
