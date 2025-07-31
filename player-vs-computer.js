@@ -25,6 +25,7 @@ const wins = [
 ];
 const corners = [1, 3, 7, 9];
 const center = 5;
+const edges = [2, 4, 6, 8];
 
 function checkWinner() {
   for (const [a, b, c] of wins) {
@@ -155,20 +156,22 @@ function player2Turn() {
     checkWinner();
     return;
   }
-  if (texts[center].textContent === "X")
-    for (const i of corners) {
-      if (texts[i].textContent === "") {
-        texts[i].textContent = "O";
-        checkWinner();
-        return;
-      }
-    }
-  for (const i of [2, 4, 6, 8]) {
-    if (texts[i].textContent === "") {
-      texts[i].textContent = "O";
-      checkWinner();
-      return;
-    }
+
+  const emptyCorners = corners.filter((i) => texts[i].textContent === "");
+  if (texts[center].textContent === "X" && emptyCorners.length > 0) {
+    const cornerChoice =
+      emptyCorners[Math.floor(Math.random() * emptyCorners.length)];
+    texts[cornerChoice].textContent = "O";
+    checkWinner();
+    return;
+  }
+
+  const emptyCenters = edges.filter((i) => texts[i].textContent === "");
+  if (texts[center].textContent === "O" && emptyCenters.length > 0) {
+    const edgeChoice = emptyCenters[Math.floor(Math.random() * emptyCenters.length)];
+    texts[edgeChoice].textContent = "O";
+    checkWinner();
+    return;
   }
 
   for (let i = 1; i <= 9; i++) {
