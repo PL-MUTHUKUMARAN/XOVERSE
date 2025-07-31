@@ -49,8 +49,27 @@ body {
   position: absolute;
   top: 10%;
   color: aliceblue;
-  font-size: 50px;
-  filter: drop-shadow(0px 0px 4px black);
+  font-size: clamp(26px, 5vw, 50px);
+  filter: drop-shadow(0px 0px 5px black);
+  border-right: 2px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(20, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 22.2ch;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 button {
@@ -81,8 +100,5 @@ button:hover {
   button {
     width: 180px;
     font-size: 15px;
-  }
-  #w2xo {
-    font-size: 35px;
   }
 }
