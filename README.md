@@ -4,6 +4,13 @@
 
 ---
 
+🌐 Live Demo
+
+🔗[Play Now](https://pl-muthukumaran.github.io/XOVERSE/)
+
+---
+
+
 ## 📁 Project Structure
 
 XOVERSE/  
